@@ -50,7 +50,7 @@ triangles.forEach {$0.draw(); $0.commit()}
 ```
 
 
-上面的代码中，我们的预期的一般情况应该是希望执行我们自己实现的方法（输出`Triangle() Commit triangle`）但从结果上看执行的却是协议中的默认实现。其实导致这个差异的原因是Protocol中的函数派发方式，在Swift Protocol中，如果该方法在定义中有声明，则采用动态派发，如果在定义中未声明该方法，则默认使用静态派发的方式
+上面的代码中，我们的预期应该是执行自己重写的实现（输出`Triangle() Commit triangle`），但从结果上看执行的却是协议中的默认实现。其实导致这个差异的原因是Protocol中的函数派发方式，在Swift Protocol中，如果该方法在定义中有声明，则采用动态派发，如果在定义中未声明该方法，则默认使用静态派发的方式。
 在平常开发中大部分人也不会太关注函数派发机制、函数调用栈帧等，其实如果对其中的一些原理稍有了解的话，在面对一些奇奇怪怪的诡异问题时也就能大概知其原因，至少可以提供一个解决的思路
 
 #### 动态派发 <[Dynamic dispatch - Wikipedia](https://en.wikipedia.org/wiki/Dynamic_dispatch)>
