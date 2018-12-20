@@ -1,7 +1,7 @@
 # 从Protocol Extension看Swift 派发机制
 
 ## Protocol中的诡异现象
-相信大家都知道，在Swift Protocol中是可以通过Extension提供默认实现方法的，并且无需在声明中定义。这也是Swift Protocol如此强大的基石，广大的Swifter可以利用其灵活的特点轻松实现POP，不过此文重点不是介绍如何面向协议编程，有兴趣的同学可以参阅喵神出品的[面向协议编程与 Cocoa 的邂逅 (上)](https://onevcat.com/2016/11/pop-cocoa-1/)
+相信大家都知道，在Swift Protocol中是可以通过Extension提供默认实现方法的，并且无需在声明中定义。这也是Swift Protocol如此强大的基石，Swifter们可以利用其灵活的特点轻松实现POP，不过此文重点不是介绍如何面向协议编程，有兴趣的同学可以参阅喵神出品的[面向协议编程与 Cocoa 的邂逅 (上)](https://onevcat.com/2016/11/pop-cocoa-1/)
 下文要介绍的是在使用Protocol开发中我们可能会遇到（也许遇到过）的坑，比如使用Protocol作为类型声明、泛型约束，并且调用其Extension中的默认实现，就有可能出现不符合我们预期的结果。如下示例：(其中注释为对应语句输出结果)
 
 
